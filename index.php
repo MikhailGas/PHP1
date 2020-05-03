@@ -2,6 +2,7 @@
     .wrapper{
         height: 100%;
     }
+
     .menu{
         display: flex;
         padding: 10px;
@@ -134,6 +135,18 @@
     
     
 
+?>
+<div class="wrapper">
+    <main></main>
+    <footer>
+        <h3><?=$year?> год</h3>
+        <h3><?=showTime()?></h3>
+        <p>Результат возведения числа <?=$arg?> в степень <?=$pow?>: <b><?=power($arg,$pow)?></b></p> 
+    </footer>
+</div>
+
+<?php
+
 //6. ---------------------------------------------------------
     
 
@@ -146,6 +159,7 @@
     }
 
 //7. ----------------------------------------------------------
+
 
 
     function showTime(){
@@ -313,3 +327,23 @@
         <p>Результат возведения числа <?=$arg?> в степень <?=$pow?>: <b><?=power($arg,$pow)?></b></p> 
     </footer>
 </div>
+function showTime(){
+    $hour = date('H');
+    $minute = date('i');
+    define('HOUR','час');
+    define('MINUTE','минут');
+    if ($hour % 20 == 1) $stringHour = HOUR;
+    elseif ($hour % 20 > 1 && $hour % 20 < 5) $stringHour = HOUR.'а';
+    else $stringHour = HOUR.'ов';
+
+    if ($minute % 20 == 1) $stringMinute = MINUTE.'а';
+    elseif ($minute % 20 > 1 && $minute % 20 < 5) $stringMinute = MINUTE.'ы';
+    else $stringMinute = MINUTE;
+
+    return "$hour $stringHour $minute $stringMinute";
+}
+
+
+
+?>
+
