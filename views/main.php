@@ -6,8 +6,8 @@
     foreach($filelist as $file){
         echo '
         
-            <div class="gallery_item">
-                <a href="img/' . $file.'" target="_blank"><img src="img/preview_pictures/' . $file.'"  alt="картинка" class="gallery_img"></a>
+            <div class="gallery_item" onclick="modal(' . "'" . $file . "'" . ')">
+                <img src="img/preview_pictures/' . $file.'"  alt="картинка" class="gallery_img">
             </div>
         ';
     }

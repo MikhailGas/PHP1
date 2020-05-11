@@ -56,6 +56,3 @@ if($directory){
 
 
 include VIEWS_DIR . 'home.php';
-
-
-
