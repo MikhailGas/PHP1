@@ -14,10 +14,22 @@ body{
 header {
     min-height: 80px;
     background-color: #cde;
+   
+}
+.menu {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+    justify-content: start;
+    padding: 0;
+}
+.menu-item{
+    list-style: none;
+    padding: 2px 5px;
+    margin: 0;
+}
+.menu-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
 }
 main {
     min-height: 80px;
@@ -46,9 +58,21 @@ main {
     width: 210px;
     border: 2px solid blue;
     border-radius: 3px;
-    
+    position: relative;
     margin-bottom: 5px;;
 }
+.num-views{
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: rgb(209, 230, 28);
+    position: absolute;
+    top:-5px;
+    left: -5px;
+    border: 1px solid black;
+    text-align: center;
+}
+
 .gallery_img{
     width: 200px;
     
@@ -85,4 +109,8 @@ main {
 .close {
     font-size:  30px;
     font-weight:  bold;
+}
+
+.photo{
+    max-width: 80%;
 }

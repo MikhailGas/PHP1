@@ -3,12 +3,16 @@
 ?>
 <div class="gallery">
 <?php
-    foreach($filelist as $file){
+    foreach($data as $item){
         echo '
-        
-            <div class="gallery_item" onclick="modal(' . "'" . $file . "'" . ')">
-                <img src="img/preview_pictures/' . $file.'"  alt="картинка" class="gallery_img">
-            </div>
+            
+                <div class="gallery_item"> 
+                    <a href="photo.php?id=' . $item['id'] . '">
+                        <img src="' . $item['path_preview'] . $item['name'].'"  alt="картинка" class="gallery_img">
+                    </a>
+                    <div class="num-views">' . $item['num_of_views']. '</div>
+                </div>
+           
         ';
     }
 ?>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Project</title>
+    <title>Photo</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,9 +13,10 @@
         ?>
     </header>
     <main>
-    <?php
-            include VIEWS_DIR . 'main.php';
-        ?>
+        <h2 class="photo-name"><?=$name . '   ' . $width . ' X ' . $height?></h2>
+        <img src="<?=$path . $name?>" alt="photo" class="photo">
+        <p>Просмотров: <?=$num_of_views?></p>
+    
     </main>
     <div class="modal" id="modal">
         <div class="modal-content">
@@ -28,7 +29,6 @@
             </div>
         </div>
     </div>
-    
     <!--<script src="js/modal.js"></script>-->
 </body>
 </html>
