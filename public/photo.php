@@ -6,11 +6,11 @@
     
 
     if(isset($_GET['id'])){
-        $conn = mysqli_connect("localhost", "root", "", "shop");
+        $conn = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
         if ($id = (int) mysqli_real_escape_string($conn, $_GET['id'])) {
             
             $sql = "SELECT id, name, path, width, height, num_of_views FROM photos WHERE id={$id}";
-            $data = getDataFromDB($conn, $sql);
+            $data = request($conn, $sql);
             
         }
         
@@ -21,14 +21,14 @@
         $num_of_views = $data[0]['num_of_views'];
         $ip = $_SERVER['REMOTE_ADDR'];
         $sql = "SELECT * FROM ip";
-        $data = getDataFromDB($conn, $sql);
+        $data = request($conn, $sql);
         
         if(!findIP($data, $ip, $id)){
             $sql = "INSERT INTO `ip` (ip, id_photo) VALUES ('$ip', '$id')";
-            changeDataFromDB($conn, $sql);
+            request($conn, $sql);
             $num_of_views++;
             $sql = "UPDATE photos SET num_of_views={$num_of_views} WHERE id={$id}";
-            changeDataFromDB($conn, $sql);
+            request($conn, $sql);
         }
         
                

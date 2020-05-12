@@ -1,17 +1,15 @@
 <?php
-
 include __DIR__ . '/../config/config.php';
 include ENGINE_DIR . 'imageresize.php';
 include ENGINE_DIR . 'DataDB.php';
 $error = false;
 $title = 'Главная';
-$conn = mysqli_connect("localhost", "root", "", "shop");
-
-session_start();
+$conn = mysqli_connect(HOST, USER, PASSWORD, DATABASE);
   
-  if (isset($_POST)) {
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      
     if($_FILES['my_file']['name']) {
-        var_dump($_FILES['my_file']);
+        
         
         if(!file_exists(IMG_DIR)) {
             mkdir(IMG_DIR);
@@ -43,14 +41,14 @@ session_start();
         else {
             $error = "Файл не может быть загружен, так как не является изображением, либо размер превышает 10Мб";
         }
-        $_FILES['my_file']['name'] = '';
+        header("Location:".$_SERVER['PHP_SELF']);
         
     }
   }
 
 
 $sql = "SELECT id, name, path_preview, num_of_views FROM photos ORDER BY num_of_views DESC";
-$data = getDataFromDB($conn, $sql);
+$data = request($conn, $sql);
 
 
 include VIEWS_DIR . 'home.php';
