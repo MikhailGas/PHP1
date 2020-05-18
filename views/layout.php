@@ -13,9 +13,7 @@
         ?>
     </header>
     <main>
-    <?php
-            include VIEWS_DIR . 'main.php';
-        ?>
+    <?=$content;?>
     </main>
     <div class="modal" id="modal">
         <div class="modal-content">
@@ -28,6 +26,7 @@
             </div>
         </div>
     </div>
-    <script src="js/modal.js"></script>
+    
+    <!--<script src="js/modal.js"></script>-->
 </body>
 </html>

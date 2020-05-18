@@ -14,10 +14,22 @@ body{
 header {
     min-height: 80px;
     background-color: #cde;
+   
+}
+.menu {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
+    justify-content: start;
+    padding: 0;
+}
+.menu-item{
+    list-style: none;
+    padding: 2px 5px;
+    margin: 0;
+}
+.menu-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
 }
 main {
     min-height: 80px;
@@ -40,17 +52,19 @@ main {
     padding: 5px;
 } 
 .gallery_item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 200px;
     width: 210px;
-    border: 2px solid blue;
+    border: 2px solid black;
     border-radius: 3px;
-    
-    margin-bottom: 5px;;
+    position: relative;
+    margin-bottom: 5px;
+    margin-right: 5px;
 }
+
+
 .gallery_img{
     width: 200px;
+    height: 200px;
     
 }
 #upload_form{
@@ -85,4 +99,8 @@ main {
 .close {
     font-size:  30px;
     font-weight:  bold;
+}
+
+.photo{
+    max-width: 80%;
 }

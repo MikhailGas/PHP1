@@ -1,15 +1,12 @@
-<?php
-    include VIEWS_DIR . 'upload.php';
-?>
 <div class="gallery">
-<?php
-    foreach($filelist as $file){
-        echo '
-        
-            <div class="gallery_item" onclick="modal(' . "'" . $file . "'" . ')">
-                <img src="img/preview_pictures/' . $file.'"  alt="картинка" class="gallery_img">
-            </div>
-        ';
-    }
-?>
+<?php foreach($data as $item): ?>
+    <a href="<?="product.php?id={$item['id']}"?>">
+        <div class="gallery_item"> 
+            <h3><?=$item['product']?></h3>
+            <p><?=$item['description']?></p>
+            <p><?=$item['category']?></p>
+            <h2><?=$item['price']?></h2>
+        </div>
+    </a>
+<?php endforeach; ?>
 </div>
