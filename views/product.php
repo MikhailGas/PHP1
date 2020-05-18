@@ -4,6 +4,6 @@
     <h3><?=$data['brand']?></h3>
     <img src="" alt="Product">
     <p><?=$data['description']?></p>
-    <h2><?=$data['price']?></h2>
+    <h1><?=$data['price']?></h1>
 
 </div>
