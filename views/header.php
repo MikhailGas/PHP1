@@ -7,3 +7,6 @@
     
     ?>
 </ul>
+<form action="cart.php">
+    <button type>Корзина</button>
+</form>
